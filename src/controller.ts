@@ -25,7 +25,7 @@ class controller {
             return;
         }
         else{
-            res.status(500).send("You have entered wrong id");
+            res.status(400).send("You have entered wrong id");
             return;
         } 
     }
