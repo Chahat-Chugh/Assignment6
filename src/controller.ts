@@ -16,10 +16,11 @@ class controller {
         const id = req.params.id;
         const users = JSON.parse(data) as User[];
         const index = users.findIndex((user)=> user.id === Number(id));
-        const singleUser = users[index];
+        
        
-        if(singleUser)
+        if(index>=0)
         {
+            const singleUser = users[index];
             res.status(200).send(singleUser);
             return;
         }
