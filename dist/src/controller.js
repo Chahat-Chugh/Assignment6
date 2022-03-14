@@ -23,13 +23,12 @@ class controller {
             const users = JSON.parse(data);
             const index = users.findIndex((user) => user.id === Number(id));
             const singleUser = users[index];
-            console.log(singleUser);
             if (singleUser) {
                 res.status(200).send(singleUser);
                 return;
             }
             else {
-                res.status(404).send("You have entered wrong id");
+                res.status(500).send("You have entered wrong id");
                 return;
             }
         });
